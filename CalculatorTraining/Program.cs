@@ -1,4 +1,6 @@
-﻿using XUnitTest;
+﻿using System;
+using CalculatorTraining;
+using XUnitTest;
 
 var calculator = new Calculator();
 while (true)
@@ -79,8 +81,42 @@ while (true)
 
                 Console.WriteLine("Result: " + calculator.Divide(x, y) + "\n");
                 break;
-
             case 5:
+                Console.Write("x: ");
+                if (!float.TryParse(Console.ReadLine(), out x))
+                {
+                    Console.WriteLine("Not a valid float\n");
+                    break;
+                }
+                Console.Write("y: ");
+                if (!float.TryParse(Console.ReadLine(), out y))
+                {
+                    Console.WriteLine("Not a valid float\n");
+                    break;
+                }
+
+                var finance = new Finance(new Calculator());
+                Console.WriteLine("Result: " + finance.CustomAction(x, y) + "\n");
+                break;
+            case 6:
+                Console.Write("x: ");
+                if (!float.TryParse(Console.ReadLine(), out x))
+                {
+                    Console.WriteLine("Not a valid float\n");
+                    break;
+                }
+                Console.Write("y: ");
+                if (!float.TryParse(Console.ReadLine(), out y))
+                {
+                    Console.WriteLine("Not a valid float\n");
+                    break;
+                }
+
+                var finance2 = new Finance(new CrazyCalculator());
+                Console.WriteLine("Result: " + finance2.CustomAction(x, y) + "\n");
+                break;
+
+            case 7:
                 return;
 
             default:
@@ -99,6 +135,8 @@ void printMenu()
     Console.WriteLine("2. Subtract.......................................................");
     Console.WriteLine("3. Multiply.......................................................");
     Console.WriteLine("4. Divide.........................................................");
-    Console.WriteLine("5. Exit...........................................................");
+    Console.WriteLine("5. CustomAction Normal Calculator...................................");
+    Console.WriteLine("6. CustomAction Crazy Calculator....................................");
+    Console.WriteLine("7. Exit...........................................................");
     Console.Write("Input: ");
 }

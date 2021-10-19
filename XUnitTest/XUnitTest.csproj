@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CalculatorTraining\CalculatorTraining.csproj" />
     <ProjectReference Include="..\CalculatorTraining\CalculatorTraining\CalculatorTraining.csproj" />
   </ItemGroup>
 

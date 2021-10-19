@@ -35,13 +35,13 @@ namespace XUnitTest
         //{
         //    return value % 2 == 1;
         //}
-
+        
         [Fact]
         public void AddTest()
         {
             var calculator = new Calculator();
             var result = calculator.Add(26, 18);
-            Assert.Equal(44, result);
+            Assert.Equal(44, result); //TODO: Use FluentAssertions Library
         }
 
         [Fact]
