@@ -3,6 +3,7 @@ using CalculatorTraining;
 using XUnitTest;
 
 var calculator = new Calculator();
+var crazyCalculator = new CrazyCalculator();   
 while (true)
 {
     int option;
@@ -95,7 +96,7 @@ while (true)
                     break;
                 }
 
-                var finance = new Finance(new Calculator());
+                var finance = new Finance(calculator);
                 Console.WriteLine("Result: " + finance.CustomAction(x, y) + "\n");
                 break;
             case 6:
@@ -112,7 +113,7 @@ while (true)
                     break;
                 }
 
-                var finance2 = new Finance(new CrazyCalculator());
+                var finance2 = new Finance(crazyCalculator);
                 Console.WriteLine("Result: " + finance2.CustomAction(x, y) + "\n");
                 break;
 
@@ -131,12 +132,12 @@ while (true)
 void printMenu()
 {
     Console.WriteLine("=========================== Calculator ===========================");
-    Console.WriteLine("1. Add............................................................");
-    Console.WriteLine("2. Subtract.......................................................");
-    Console.WriteLine("3. Multiply.......................................................");
-    Console.WriteLine("4. Divide.........................................................");
-    Console.WriteLine("5. CustomAction Normal Calculator...................................");
-    Console.WriteLine("6. CustomAction Crazy Calculator....................................");
+    Console.WriteLine("1. Add (x+y)......................................................");
+    Console.WriteLine("2. Subtract (x-y).................................................");
+    Console.WriteLine("3. Multiply (x*y).................................................");
+    Console.WriteLine("4. Divide (x/y)...................................................");
+    Console.WriteLine("5. CustomAction Normal Calculator [(x^2)+(y^2)+10]................");
+    Console.WriteLine("6. CustomAction Crazy Calculator [(x^2)+(y^2)+12].................");
     Console.WriteLine("7. Exit...........................................................");
     Console.Write("Input: ");
 }
