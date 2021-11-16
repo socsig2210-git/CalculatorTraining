@@ -1,0 +1,29 @@
+﻿@model CalculatorModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<form asp-controller="Home" asp-action="Index" method="post" >  
+    <div class="form-group">  
+        <div class="row">  
+            <label asp-for="x" class="col-lg-2"></label>  
+            <input asp-for="x" class="col-lg-2" type="number" />  
+        </div>  
+        <div class="row">  
+            <label asp-for="y" class="col-lg-2"></label>  
+            <input asp-for="y" class="col-lg-2" type="number"/>  
+        </div>  
+        <div class="row">  
+            <label asp-for="OperationType" class="col-lg-2"></label>  
+            <select asp-for="OperationType" class="col-lg-2" asp-items="Html.GetEnumSelectList<OperationType>()">  
+            </select>  
+        </div>  
+        <div class="row">  
+            <label asp-for="result" class="col-lg-2"></label>  
+            <input id="result" disabled="disabled" class="col-lg-2" asp-for="result" />  
+        </div>  
+        <div class="row">  
+            <input id="submit" type="submit" value="Submit" asp-action="Index" />  
+        </div>  
+    </div>  
+</form> 
+

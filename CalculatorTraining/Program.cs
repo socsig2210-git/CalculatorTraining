@@ -1,6 +1,5 @@
 ﻿using System;
 using CalculatorTraining;
-using XUnitTest;
 
 var calculator = new Calculator();
 var crazyCalculator = new CrazyCalculator();   

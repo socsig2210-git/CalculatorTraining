@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using CalculatorTraining;
 
 namespace XUnitTest
 {
@@ -59,6 +60,35 @@ namespace XUnitTest
             else
                 Assert.False(true);
         }
+
+        /*namespace Backbone.Domain.Logic.UnitTests
+{
+    public class PricingHelperTests
+    {
+        [Theory]
+        [ClassData(typeof(PricingHelperTestData))]
+        public void Pricing(PricingDiscountOptions pricingOptions, decimal expectedBuyerPrice, decimal expectedCustomerPrice)
+        {
+            var actual = PricingHelper.GetUnitPricing(pricingOptions);
+
+            Assert.Equal(expectedBuyerPrice, actual.BuyerUnitPrice);
+            Assert.Equal(expectedCustomerPrice, actual.CustomerUnitPrice);
+        }
+    }
+    
+    public class PricingHelperTestData : IEnumerable<object[]>
+    {
+        public IEnumerator<object[]> GetEnumerator()
+        {
+            yield return new object[] { new PricingDiscountOptions(65.1m, true, (EnSpecialCharge?) 7, 
+                EnProductType.CabinetDoor, EnProductCategory.Classic, null, 0.45m, 0.2m), 88.32m, 128.47m};
+            yield return new object[] { new PricingDiscountOptions(65.1m, true, EnSpecialCharge.DoubleFace19, 
+                EnProductType.CabinetDoor, EnProductCategory.Gloss, null, 0.45m, 0.2m), 64.23m, 93.43m};
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+}*/
 
 
     }
